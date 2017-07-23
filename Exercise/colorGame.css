@@ -71,3 +71,10 @@ button:hover{
 	color:white;
 	background:steelblue;
 }
+p{
+	color:white;
+	margin:0;
+	background: steelblue;
+	text-align: center;
+	
+}

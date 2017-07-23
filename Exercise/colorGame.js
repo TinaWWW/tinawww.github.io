@@ -11,6 +11,7 @@ var h1 = document.getElementById("head");
 var msg = document.getElementById("msg");	
 var easy = document.querySelector("#easy")
 var hard = document.querySelector("#hard")
+var p = document.querySelectorAll("p")
 
 easy.addEventListener("click",function(){
 	hard.classList.remove("selected");
@@ -48,6 +49,8 @@ for(var i=0; i<squares.length; i++){
 			changeColor(clickedColor);
 			h1.style.backgroundColor = pickedColor;
 			reset.textContent = "Try Again?";
+			p[0].style.backgroundColor = pickedColor;
+			p[1].style.backgroundColor = pickedColor;
 		}else{
 			this.style.backgroundColor = "#232323";
 			msg.textContent="Try again!"
@@ -94,6 +97,8 @@ function resetAll(){
 	}
 
 	h1.style.backgroundColor = "steelblue";
+	p[0].style.backgroundColor = "steelblue";
+	p[1].style.backgroundColor = "steelblue";
 	reset.textContent = "New Colors";
 	msg.textContent = "";
 };
