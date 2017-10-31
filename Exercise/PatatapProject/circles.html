@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Circles by TW</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/circles.css">
+	<script type="text/javascript" src="assets/js/paper-full.js"></script>
+	<script type="text/paperscript" canvas="myCanvas">
+
+		var circles = [];
+
+		function onKeyDown(event) {
+			var maxPoint = new Point(view.size.width, view.size.height); 
+			var randPoint = Point.random();
+			var point = maxPoint * randPoint;
+			console.log(point);
+
+			var myCircle = new Path.Circle(point, 100);
+			myCircle.fillColor = 'white';
+			circles.push(myCircle);
+			console.log(myCircle);
+
+		}
+
+		var temp = new Path.Circle(new Point(300,300),50);
+		temp.fillColor = "red";
+
+		function onFrame(event) {
+			for(var i=0; i<circles.length; i++){
+				//circles[i].scale(0.95);
+				circles[i].fillColor.hue += 1;
+			};
+
+			temp.fillColor.hue += 1;
+		}
+
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>
